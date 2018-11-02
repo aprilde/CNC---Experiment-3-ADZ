@@ -7,7 +7,7 @@
 //and arduino running the SerialInput_1button_1ana sketch
 
 var serial;       //variable to hold the serial port object
-
+//var grumpImg;
 
 var button1;      //this variable will hold the value from "b1"
 var button2;
@@ -16,8 +16,13 @@ var button4;
 
 //var memory= 0;
 
-var serialPortName = "/dev/cu.usbmodem272";  //FOR PC it will be COMX on mac it will be something like "/dev/cu.usbmodemXXXX"
+var serialPortName = "/dev/cu.usbmodem279";  //FOR PC it will be COMX on mac it will be something like "/dev/cu.usbmodemXXXX"
                               //Look at P5 Serial to see the available ports
+function preload(){
+  grumpImg = loadImage("grump.png");
+
+}
+
 function setup() {
   
   createCanvas(2000,1000);
@@ -29,16 +34,17 @@ function setup() {
 }
 
 function draw() {
-  //background(255);
+  //background(0);
   stroke(0);
 
   
   if(button1==1)
-      //if(button1==1 && memory == 0)
+
   {
-    //memory = 1;
-  ellipse(random(0,2000), random(0,1000), 55, 55);
-  fill(255,0,0);
+
+  image (grumpImg,random(0,2000), random(0,1000), grumpImg.width/10,grumpImg.height/10);
+  //ellipse(random(0,2000), random(0,1000), 55, 55);
+  //fill(255,0,0);
   }
 /*    else
     {
