@@ -20,6 +20,8 @@ var serialPortName = "/dev/cu.usbmodem279";  //FOR PC it will be COMX on mac it 
                               //Look at P5 Serial to see the available ports
 function preload(){
   grumpImg = loadImage("grump.png");
+    SuccessImg = loadImage("images/SuccessKid.png");
+    CageImg = loadImage("images/NCage.png");
 
 }
 
@@ -39,19 +41,22 @@ function draw() {
 
   
   if(button1==1)
-
   {
-
   image (grumpImg,random(0,2000), random(0,1000), grumpImg.width/10,grumpImg.height/10);
-  //ellipse(random(0,2000), random(0,1000), 55, 55);
-  //fill(255,0,0);
   }
-/*    else
-    {
-      fill(0,255,0);
-    }
-*/
-  //strokeWeight(map(sensor2,0,1023,0.01,5));
+
+      if(button2==0)
+  {
+//  ellipse(random(0,2000), random(0,1000), 55, 55);
+//  fill(255,0,0);
+    image (SuccessImg,random(0,2000), random(0,1000), SuccessImg.width/10,SuccessImg.height/10);  
+  }
+        if(button3==0)
+  {
+//  ellipse(random(0,2000), random(0,1000), 55, 55);
+//  fill(255,0,0);
+    image (CageImg,random(0,2000), random(0,1000), CageImg.width/5,CageImg.height/5);  
+  }
   
   
 }
