@@ -22,9 +22,10 @@ var imgBtn4;
 var serialPortName = "/dev/cu.usbmodem*";  //FOR PC it will be COMX on mac it will be something like "/dev/cu.usbmodemXXXX"
                               //Look at P5 Serial to see the available ports
 function preload(){
-  grumpImg = loadImage("grump.png");
-    SuccessImg = loadImage("images/SuccessKid.png");
-    CageImg = loadImage("images/NCage.png");
+  redImg = loadImage("images/red.png");
+    blueImg = loadImage("images/blue.png");
+    purpleImg = loadImage("images/purple.png");
+    orangeImg = loadImage("images/orange.png");
 
 }
 
@@ -43,39 +44,39 @@ function draw() {
 console.log(lightSen);
   stroke(0);
     
-if(lightSen <= 300)
+if(lightSen <= 200)
 {
     console.log("BRIGHT!!!!")
-    imgBtn1 = grumpImg;
-    imgBtn2 = grumpImg;
-    imgBtn3 = grumpImg;
-    imgBtn4 = grumpImg;
+    imgBtn1 = blueImg;
+    imgBtn2 = redImg;
+    imgBtn3 = purpleImg;
+    imgBtn4 = orangeImg;
 }
     else{
         console.log("DARKKK!!!!")
-        imgBtn1 = CageImg;
-        imgBtn2 = CageImg;
-        imgBtn3 = CageImg;
-        imgBtn4 = CageImg;
+    imgBtn1 = orangeImg;
+    imgBtn2 = redImg;
+    imgBtn3 = purpleImg;
+    imgBtn4 = orangeImg;
     }
   
   if(button1==1)
   {
-  image (imgBtn1,random(0,2000), random(0,1000),width,height);
+  image (imgBtn1,random(0,2000), random(0,1000));
   }
 
 if(button2==0)
   {
 //  ellipse(random(0,2000), random(0,1000), 55, 55);
 //  fill(255,0,0);
-    image (imgBtn2,random(0,2000), random(0,1000) ,width,height);  
+    image (imgBtn2,random(0,2000), random(0,1000));  
   }
         if(button3==0)
   {
 //  ellipse(random(0,2000), random(0,1000), 55, 55);
 //  fill(255,0,0);
-    //tint(255, 127);
-    image (imgBtn3,random(0,2000), random(0,1000),width,height);  
+    tint(255, 127);
+    image (imgBtn3,random(0,2000), random(0,1000));  
     
   }
 

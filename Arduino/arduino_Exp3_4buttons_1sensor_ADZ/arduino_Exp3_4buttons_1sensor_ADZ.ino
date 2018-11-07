@@ -27,6 +27,7 @@ void setup()
   pinMode(button2,INPUT_PULLUP); 
   pinMode(button3,INPUT_PULLUP); 
   pinMode(button4,INPUT_PULLUP); 
+  delay(100);
 }
 
 void loop() 
