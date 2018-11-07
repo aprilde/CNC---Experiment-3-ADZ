@@ -23,9 +23,13 @@ var serialPortName = "/dev/cu.usbmodem*";  //FOR PC it will be COMX on mac it wi
                               //Look at P5 Serial to see the available ports
 function preload(){
   redImg = loadImage("images/red.png");
-    blueImg = loadImage("images/blue.png");
+    blueImg = loadImage("images/blueSpecks.png");
     purpleImg = loadImage("images/purple.png");
-    orangeImg = loadImage("images/orange.png");
+    orangeImg = loadImage("images/orangeSpecks.png");
+    redShapes = loadImage("images/redShapes.png");
+    blueShapes = loadImage("images/blueShapes.png");
+    sunImg = loadImage("images/sun.png");
+    moonImg = loadImage("images/moon.png");
 
 }
 
@@ -40,44 +44,46 @@ function setup() {
 }
 
 function draw() {
-  //background(0);
 console.log(lightSen);
   stroke(0);
     
-if(lightSen <= 200)
+if(lightSen <= 400)
 {
     console.log("BRIGHT!!!!")
-    imgBtn1 = blueImg;
+    imgBtn1 = orangeImg;
     imgBtn2 = redImg;
-    imgBtn3 = purpleImg;
-    imgBtn4 = orangeImg;
+    imgBtn3 = redShapes;
+    imgBtn4 = sunImg;
 }
     else{
         console.log("DARKKK!!!!")
-    imgBtn1 = orangeImg;
-    imgBtn2 = redImg;
-    imgBtn3 = purpleImg;
-    imgBtn4 = orangeImg;
+    imgBtn1 = blueImg;
+    imgBtn2 = purpleImg;
+    imgBtn3 = blueShapes;
+    imgBtn4 = moonImg;
     }
   
   if(button1==1)
   {
+    tint(255, 127);
   image (imgBtn1,random(0,2000), random(0,1000));
   }
 
 if(button2==0)
   {
-//  ellipse(random(0,2000), random(0,1000), 55, 55);
-//  fill(255,0,0);
+    tint(255, 127);
     image (imgBtn2,random(0,2000), random(0,1000));  
   }
         if(button3==0)
   {
-//  ellipse(random(0,2000), random(0,1000), 55, 55);
-//  fill(255,0,0);
     tint(255, 127);
     image (imgBtn3,random(0,2000), random(0,1000));  
     
+  }
+            if(button4==0)
+  {
+        tint(255, 127);
+      image (imgBtn4,random(0,2000), random(0,1000));   
   }
 
 }
@@ -91,7 +97,7 @@ var rawData = serial.readStringUntil('\r\n'); //read the incoming string until i
     if(rawData.length>=5)                      //check that there is something in the string
     {                                         
       
-      button1 = JSON.parse(rawData).b1;       //the parameter value .s1 must match the parameter name created within the arduino file
+      button1 = JSON.parse(rawData).b1;       //the parameter value .b1 must match the parameter name created within the arduino file
       button2 = JSON.parse(rawData).b2; 
       button3 = JSON.parse(rawData).b3;
       button4 = JSON.parse(rawData).b4;

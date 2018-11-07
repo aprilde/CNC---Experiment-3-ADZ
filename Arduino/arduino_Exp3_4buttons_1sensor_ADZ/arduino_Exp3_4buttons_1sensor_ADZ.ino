@@ -27,7 +27,7 @@ void setup()
   pinMode(button2,INPUT_PULLUP); 
   pinMode(button3,INPUT_PULLUP); 
   pinMode(button4,INPUT_PULLUP); 
-  delay(100);
+
 }
 
 void loop() 
@@ -39,6 +39,7 @@ void loop()
   int buttonValue3 = digitalRead(button3);               //read button3
   int buttonValue4 = digitalRead(button4);               //read button4
   //int anaValue = analogRead(analogInPin);                 //read the analog value
+  delay(100);
  
 if(millis()-lastSend>=sendRate)                           //use a timer to stablize the data send
 {
