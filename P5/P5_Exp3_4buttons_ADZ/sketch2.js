@@ -22,14 +22,17 @@ var imgBtn4;
 var serialPortName = "/dev/cu.usbmodem*";  //FOR PC it will be COMX on mac it will be something like "/dev/cu.usbmodemXXXX"
                               //Look at P5 Serial to see the available ports
 function preload(){
-  redImg = loadImage("images/red.png");
-    blueImg = loadImage("images/blueSpecks.png");
-    purpleImg = loadImage("images/purple.png");
-    orangeImg = loadImage("images/orangeSpecks.png");
-    redShapes = loadImage("images/redShapes.png");
-    blueShapes = loadImage("images/blueShapes.png");
-    sunImg = loadImage("images/sun.png");
-    moonImg = loadImage("images/moon.png");
+    
+    realLife1 = loadImage("images/rape.jpg");
+    realLife2 = loadImage("images/schoolShooting.jpg");
+    realLife3 = loadImage("images/christine-blasey-ford.jpg");
+    realLife4 = loadImage("images/prochoice.jpg");
+    
+    meme1 = loadImage("images/SuccessKid.png");
+    meme2 = loadImage("images/NCage.png");
+    meme3 = loadImage("images/grump.png");
+    meme4 = loadImage("images/Dog.jpg");
+    
 
 }
 
@@ -50,17 +53,17 @@ console.log(lightSen);
 if(lightSen <= 400)
 {
     console.log("BRIGHT!!!!")
-    imgBtn1 = orangeImg;
-    imgBtn2 = redImg;
-    imgBtn3 = redShapes;
-    imgBtn4 = sunImg;
+    imgBtn1 = realLife1;
+    imgBtn2 = realLife2;
+    imgBtn3 = realLife3;
+    imgBtn4 = realLife4;
 }
     else{
         console.log("DARKKK!!!!")
-    imgBtn1 = blueImg;
-    imgBtn2 = purpleImg;
-    imgBtn3 = blueShapes;
-    imgBtn4 = moonImg;
+    imgBtn1 = meme1;
+    imgBtn2 = meme2;
+    imgBtn3 = meme3;
+    imgBtn4 = meme4;
     }
   
   if(button1==0)
