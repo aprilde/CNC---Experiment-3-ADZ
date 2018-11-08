@@ -33,7 +33,6 @@ function preload(){
     meme3 = loadImage("images/grump.png");
     meme4 = loadImage("images/Dog.jpg");
     
-
 }
 
 function setup() {
@@ -68,24 +67,24 @@ if(lightSen <= 400)
   
   if(button1==0)
   {
-    tint(255, 127);
+    //tint(255, 127);
   image (imgBtn1,random(0,2000), random(0,1000));
   }
 
 if(button2==0)
   {
-    tint(255, 127);
+    //tint(255, 127);
     image (imgBtn2,random(0,2000), random(0,1000));  
   }
         if(button3==0)
   {
-    tint(255, 127);
+    //tint(255, 127);
     image (imgBtn3,random(0,2000), random(0,1000));  
     
   }
             if(button4==0)
   {
-        tint(255, 127);
+        //tint(255, 127);
       image (imgBtn4,random(0,2000), random(0,1000));   
   }
 
