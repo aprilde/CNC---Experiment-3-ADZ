@@ -63,7 +63,7 @@ if(lightSen <= 400)
     imgBtn4 = moonImg;
     }
   
-  if(button1==1)
+  if(button1==0)
   {
     tint(255, 127);
   image (imgBtn1,random(0,2000), random(0,1000));
