@@ -20,9 +20,8 @@ var imgBtn2;
 var imgBtn3;
 var imgBtn4;
 
-var songMemory1;
-var songMemory2;
-var songMemory3;
+var songMemory;
+
 
 
 var serialPortName = "/dev/cu.usbmodem*";  //FOR PC it will be COMX on mac it will be something like "/dev/cu.usbmodemXXXX"
@@ -59,9 +58,8 @@ function setup() {
   serial.on('open',ardCon);         //open the socket connection and execute the ardCon callback
   serial.on('data',dataReceived);   //when data is received execute the dataReceived function
     
-    songMemory1 = 0;
-	songMemory2 = 0;
-	songMemory3 = 0;
+    songMemory = 0;
+
 }
 
 function draw() {
@@ -76,7 +74,7 @@ if(togVal1 == 1 && togVal2 == 1)
     imgBtn2 = ad2;
     imgBtn3 = ad3;
     imgBtn4 = ad4;
-    songMemory1 = song2;
+    songMemory = 1;
 
 }
     if(togVal1 == 0 && togVal2 == 1)
@@ -87,7 +85,7 @@ if(togVal1 == 1 && togVal2 == 1)
     imgBtn2 = realLife2;
     imgBtn3 = realLife3;
     imgBtn4 = realLife4;
-    songMemory2 = song1;
+    songMemory = 2;
     
     }
     
@@ -99,47 +97,185 @@ if(togVal1 == 1 && togVal2 == 1)
     imgBtn2 = meme2;
     imgBtn3 = meme3;
     imgBtn4 = meme4;
-    songMemory3 = song3;
+    songMemory = 3;
 
     }
   
-  if(button1==0)
-  {
-    //tint(255, 127);
-  image (imgBtn1,random(0,2000), random(0,1000));
-if ( song2.isPlaying()){
-		  
-	    } else if {
-		  song2.play();
-		}       
-  }
-  else {
-	  song2.stop();
-  }
+if(button1==0) {
+	    //tint(255, 127);
+	    image (imgBtn1,random(0,2000), random(0,1000));
+    
+//    if ( songMemory == 1){
+//        if ( song1.isPlaying()){
+//		  
+//	    } else {
+//		  song1.play();
+//		  //console.log("yes");
+//	    	} 
+//        
+//    } else if ( songMemory == 2){
+//        if ( song2.isPlaying()){
+//		  
+//	    } else {
+//		  song2.play();
+//		  //console.log("yes");
+//	    	} 
+//    } else if ( songMemory == 3){
+//        if ( song3.isPlaying()){
+//		  
+//	    } else {
+//		  song3.play();
+//		  //console.log("yes");
+//	    	} 
+//    }
+//	          
+//} else {
+//    if ( songMemory == 1){
+//        if ( song1.isPlaying()){
+//		  song1.stop();
+//	    }
+//        
+//    } else if ( songMemory == 2){
+//        if ( song2.isPlaying()){
+//		  song2.stop();
+//	    } 
+//    } else if ( songMemory == 3){
+//        if ( song3.isPlaying()){
+//		  song3.stop();
+//	    } 
+//    }
+	  
+}
 
 if(button2==0)
   {
     //tint(255, 127);
     image (imgBtn2,random(0,2000), random(0,1000));  
-      if ( song2.isPlaying()){
-		  
-	    } else {
-		  song2.play();
-		}       
-  }
-  else {
-	  song2.stop();
+//      if ( songMemory == 1){
+//        if ( song1.isPlaying()){
+//		  
+//	    } else {
+//		  song1.play();
+//		  //console.log("yes");
+//	    	} 
+//        
+//    } else if ( songMemory == 2){
+//        if ( song2.isPlaying()){
+//		  
+//	    } else {
+//		  song2.play();
+//		  //console.log("yes");
+//	    	} 
+//    } else if ( songMemory == 3){
+//        if ( song3.isPlaying()){
+//		  
+//	    } else {
+//		  song3.play();
+//		  //console.log("yes");
+//	    	} 
+//    }
+//  } else {
+//      if ( songMemory == 1){
+//        if ( song1.isPlaying()){
+//		  song1.stop();
+//	    }
+//        
+//    } else if ( songMemory == 2){
+//        if ( song2.isPlaying()){
+//		  song2.stop();
+//	    } 
+//    } else if ( songMemory == 3){
+//        if ( song3.isPlaying()){
+//		  song3.stop();
+//	    } 
+//    }
   }
         if(button3==0)
   {
     //tint(255, 127);
-    image (imgBtn3,random(0,2000), random(0,1000));  
-    
+    image (imgBtn3,random(0,2000), random(0,1000));
+//      if ( songMemory == 1){
+//        if ( song1.isPlaying()){
+//		  
+//	    } else {
+//		  song1.play();
+//		  //console.log("yes");
+//	    	} 
+//        
+//    } else if ( songMemory == 2){
+//        if ( song2.isPlaying()){
+//		  
+//	    } else {
+//		  song2.play();
+//		  //console.log("yes");
+//	    	} 
+//    } else if ( songMemory == 3){
+//        if ( song3.isPlaying()){
+//		  
+//	    } else {
+//		  song3.play();
+//		  //console.log("yes");
+//	    	} 
+//    }
+//    
+//  } else {
+//      if ( songMemory == 1){
+//        if ( song1.isPlaying()){
+//		  song1.stop();
+//	    }
+//        
+//    } else if ( songMemory == 2){
+//        if ( song2.isPlaying()){
+//		  song2.stop();
+//	    } 
+//    } else if ( songMemory == 3){
+//        if ( song3.isPlaying()){
+//		  song3.stop();
+//	    } 
+//    }
   }
             if(button4==0)
   {
         //tint(255, 127);
       image (imgBtn4,random(0,2000), random(0,1000));   
+//      if ( songMemory == 1){
+//        if ( song1.isPlaying()){
+//		  
+//	    } else {
+//		  song1.play();
+//		  //console.log("yes");
+//	    	} 
+//        
+//    } else if ( songMemory == 2){
+//        if ( song2.isPlaying()){
+//		  
+//	    } else {
+//		  song2.play();
+//		  //console.log("yes");
+//	    	} 
+//    } else if ( songMemory == 3){
+//        if ( song3.isPlaying()){
+//		  
+//	    } else {
+//		  song3.play();
+//		  //console.log("yes");
+//	    	} 
+//    }
+//  } else {
+//      if ( songMemory == 1){
+//        if ( song1.isPlaying()){
+//		  song1.stop();
+//	    }
+//        
+//    } else if ( songMemory == 2){
+//        if ( song2.isPlaying()){
+//		  song2.stop();
+//	    } 
+//    } else if ( songMemory == 3){
+//        if ( song3.isPlaying()){
+//		  song3.stop();
+//	    } 
+//    }
   }
 
 }
