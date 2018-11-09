@@ -20,6 +20,10 @@ var imgBtn2;
 var imgBtn3;
 var imgBtn4;
 
+var songMemory1;
+var songMemory2;
+var songMemory3;
+
 
 var serialPortName = "/dev/cu.usbmodem*";  //FOR PC it will be COMX on mac it will be something like "/dev/cu.usbmodemXXXX"
                               //Look at P5 Serial to see the available ports
@@ -40,17 +44,24 @@ function preload(){
     meme3 = loadImage("images/grump.png");
     meme4 = loadImage("images/Dog.jpg");
     
+    song1 = loadSound('sound/human-heartbeat-daniel_simon.mp3');
+    song2 = loadSound('sound/party-crowd-daniel_simon.mp3');
+    song3 = loadSound('sound/funny-voices-daniel_simon.mp3');   
+    
 }
 
 function setup() {
     
-  
-  createCanvas(2000,1000);
+    createCanvas(2000,1000);
   //Setting up the serial port
   serial = new p5.SerialPort();     //create the serial port object
   serial.open(serialPortName); //open the serialport. determined 
   serial.on('open',ardCon);         //open the socket connection and execute the ardCon callback
   serial.on('data',dataReceived);   //when data is received execute the dataReceived function
+    
+    songMemory1 = 0;
+	songMemory2 = 0;
+	songMemory3 = 0;
 }
 
 function draw() {
@@ -65,6 +76,7 @@ if(togVal1 == 1 && togVal2 == 1)
     imgBtn2 = ad2;
     imgBtn3 = ad3;
     imgBtn4 = ad4;
+    songMemory1 = song2;
 
 }
     if(togVal1 == 0 && togVal2 == 1)
@@ -75,6 +87,8 @@ if(togVal1 == 1 && togVal2 == 1)
     imgBtn2 = realLife2;
     imgBtn3 = realLife3;
     imgBtn4 = realLife4;
+    songMemory2 = song1;
+    
     }
     
     if(togVal1 == 1 && togVal2 == 0)
@@ -85,6 +99,7 @@ if(togVal1 == 1 && togVal2 == 1)
     imgBtn2 = meme2;
     imgBtn3 = meme3;
     imgBtn4 = meme4;
+    songMemory3 = song3;
 
     }
   
@@ -92,12 +107,28 @@ if(togVal1 == 1 && togVal2 == 1)
   {
     //tint(255, 127);
   image (imgBtn1,random(0,2000), random(0,1000));
+if ( song2.isPlaying()){
+		  
+	    } else if {
+		  song2.play();
+		}       
+  }
+  else {
+	  song2.stop();
   }
 
 if(button2==0)
   {
     //tint(255, 127);
     image (imgBtn2,random(0,2000), random(0,1000));  
+      if ( song2.isPlaying()){
+		  
+	    } else {
+		  song2.play();
+		}       
+  }
+  else {
+	  song2.stop();
   }
         if(button3==0)
   {
