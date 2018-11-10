@@ -43,8 +43,8 @@ function preload(){
     meme3 = loadImage("images/grump.png");
     meme4 = loadImage("images/Dog.jpg");
     
-    song1 = loadSound('sound/human-heartbeat-daniel_simon.mp3');
-    song2 = loadSound('sound/party-crowd-daniel_simon.mp3');
+    song2 = loadSound('sound/human-heartbeat-daniel_simon.mp3');
+    song1 = loadSound('sound/party-crowd-daniel_simon.mp3');
     song3 = loadSound('sound/funny-voices-daniel_simon.mp3');   
     
 }
@@ -105,45 +105,45 @@ if(button1==0) {
 	    //tint(255, 127);
 	    image (imgBtn1,random(0,2000), random(0,1000));
     
-//    if ( songMemory == 1){
-//        if ( song1.isPlaying()){
-//		  
-//	    } else {
-//		  song1.play();
-//		  //console.log("yes");
-//	    	} 
-//        
-//    } else if ( songMemory == 2){
-//        if ( song2.isPlaying()){
-//		  
-//	    } else {
-//		  song2.play();
-//		  //console.log("yes");
-//	    	} 
-//    } else if ( songMemory == 3){
-//        if ( song3.isPlaying()){
-//		  
-//	    } else {
-//		  song3.play();
-//		  //console.log("yes");
-//	    	} 
-//    }
-//	          
-//} else {
-//    if ( songMemory == 1){
-//        if ( song1.isPlaying()){
-//		  song1.stop();
-//	    }
-//        
-//    } else if ( songMemory == 2){
-//        if ( song2.isPlaying()){
-//		  song2.stop();
-//	    } 
-//    } else if ( songMemory == 3){
-//        if ( song3.isPlaying()){
-//		  song3.stop();
-//	    } 
-//    }
+    if ( songMemory == 1){
+        if ( song1.isPlaying()){
+		  
+	    } else {
+		  song1.play();
+		  //console.log("yes");
+	    	} 
+        
+    } else if ( songMemory == 2){
+        if ( song2.isPlaying()){
+		  
+	    } else {
+		  song2.play();
+		  //console.log("yes");
+	    	} 
+    } else if ( songMemory == 3){
+        if ( song3.isPlaying()){
+		  
+	    } else {
+		  song3.play();
+		  //console.log("yes");
+	    	} 
+    }
+	          
+} else {
+    if ( songMemory == 1){
+        if ( song1.isPlaying()){
+		  song1.stop();
+	    }
+        
+    } else if ( songMemory == 2){
+        if ( song2.isPlaying()){
+		  song2.stop();
+	    } 
+    } else if ( songMemory == 3){
+        if ( song3.isPlaying()){
+		  song3.stop();
+	    } 
+    }
 	  
 }
 
